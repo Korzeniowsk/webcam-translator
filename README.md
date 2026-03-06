@@ -31,7 +31,7 @@ webcam_translator/
 │   └── display.py
 └── utils/
     └── logger.py
-
+```
 ## Installation:
 
 - pip install -r requirements.txt (NOTE: observed that some heavy files like playsound and gTTS needs separate install commands. Please check before proceeding)
