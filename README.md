@@ -11,7 +11,7 @@ This is a webcam based translator coded in python. It detects English and Devana
 - Translated hindi text appears using Pillow and NotoSans Devanagiri font
 
 ## Project structure:
-
+```
 webcam_translator/
 ├── main.py
 ├── config.py
