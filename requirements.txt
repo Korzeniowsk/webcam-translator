@@ -1,0 +1,7 @@
+opencv-python
+easyocr
+deep-translator
+gTTS
+playsound==1.2.2
+numpy
+Pillow
