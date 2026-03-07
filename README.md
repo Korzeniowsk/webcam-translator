@@ -2,7 +2,7 @@
 ---------------------
 This is a webcam based translator coded in python. It detects English and Devanagiri, translates the detected text to whichever language required (english to hindi or hindi to english) and speaks it out loud.
 
-As an aspriring project manager, this project was a way for me to learn that software is a system of tradeoffs, not a list of features. I built this to understand how engineering decisions translate into product decisions
+As an aspiring project manager, this project was a way for me to learn that software is a system of tradeoffs, not a list of features. I built this to understand how engineering decisions translate into product decisions
 
 ## Features include:
 
@@ -37,9 +37,6 @@ webcam_translator/
 ## Installation:
 
 - pip install -r requirements.txt 
-
-(NOTE: observed that some heavy files like playsound and gTTS needs separate install commands. Please check before proceeding)
-
 - python main.py
 
 ## Control buttons:
@@ -58,18 +55,18 @@ webcam_translator/
 
 ## Things I learned
 
-- Knowing technical architecture matters: Initially when I had put it in ocr/preprocess.py, bounding box appeared only for ~33ms but when later changed it to ui/display.py it when the OCR was detecting the text (~1500ms). This feature led to the alteration of two files. Made me realise promising a feature requires knowledge of the pipeline and how much engineering prowess it takes
+- Knowing technical architecture matters: Initially when I had put it in ocr/preprocess.py, bounding box appeared only for ~33ms but when later changed it to ui/display.py it matches when the OCR was detecting the text (~1500ms). This feature led to the alteration of two files. Made me realise promising a feature requires knowledge of the pipeline and how much engineering prowess it takes
 
-- Cons of third party dependencies: Intially I used googletrans for translation, but since it was not compatible with my python version (3.14), it broke the pipeline. Lesson learned: Third party dependencies are a liability. They show up in timelines, security reviews and maintenance costs
+- Cons of third party dependencies (Speed to market vs. long-term reliability): Intially I used googletrans for translation, but since it was not compatible with my python version (3.14), it broke the pipeline. Lesson learned: Third party dependencies are a liability. They show up in timelines, security reviews and maintenance costs. This error in real life product deployment is a timeline hit and a maintenance cost. I switched to deep_translator; a lesson in vetting dependencies before committing to them.
 
-- OCR every frame VS OCR every 30th frame: Initially the video was freezing constantly. This was because OCR_EVERY_N_FRAME was not added in config file. I understood that smoother video was more important than fast detection, since text will not change that fast in current scenario
+- OCR every frame VS OCR every 30th frame (User experience vs. accuracy): Initially the video was freezing constantly. This was because OCR_EVERY_N_FRAME was not added in config file. I understood that smoother video was more important than fast detection, since text will not change that fast in current scenario. A freezing video breaks the user experience entirely; a slightly slower detection doesn't. Shipping a smooth, usable product beats shipping a "smarter" broken one.
 
-- Playsound repeating word in every detection: Adding self.last_text solved this so that if the consecutive next detection is the same as the one before, need not speak it out loud
+- Playsound repeating word in every detection (Accuracy vs. user annoyance): Adding self.last_text solved this so that if the consecutive next detection is the same as the one before, need not speak it out loud
 
 - Structured system architecture: Debugging became ten times faster because this project had dedicated file pipeline and logic flow
 
-- Try/Except: Apart from logic, dependencies can be external as well (internet speed, hardware etc). One failed translation due to something beyond your control should not lead to the entire translator shutting down. 
+- Try/Except (Strictness vs. resilience): Apart from logic, dependencies can be external as well (internet speed, hardware etc). One failed translation due to something beyond your control should not lead to the entire translator shutting down. 
 
 ## Conclusion
 
-This project didn't just teach me to code, it taught me to think in tradeoffs. Every freezing frame, broken dependency, and misplaced function was a product decision in disguise. If you clone this, I hope you break it a little. That's where the learning lives
+This project didn't just teach me to code; it taught me to think in tradeoffs. Every freezing frame, broken dependency, and misplaced function was a product decision in disguise. If you clone this, I hope you break it a little. That's where the learning lives
