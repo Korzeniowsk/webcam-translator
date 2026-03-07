@@ -2,11 +2,11 @@
 ---------------------
 This is a webcam based translator coded in python. It detects English and Devanagiri, translates the detected text to whichever language required (english to hindi or hindi to english) and speaks it out loud.
 
-As an aspriring project manager, this project was a way for me to learn that software is a system of tradeoffs, not a list of features.
+As an aspriring project manager, this project was a way for me to learn that software is a system of tradeoffs, not a list of features. I built this to understand how engineering decisions translate into product decisions
 
 ## Features include:
 
-- Real time detection using EsasyOCR (chosen over tesseract since Devanagiri is not supported in tesseract)
+- Real time detection using EasyOCR (chosen over tesseract since Devanagiri is not supported in tesseract)
 - Translates using Google Translate
 - Speaks the translation out loud using gTTS
 - Bounding boxes appear over the detected text
@@ -36,7 +36,9 @@ webcam_translator/
 ```
 ## Installation:
 
-- pip install -r requirements.txt (NOTE: observed that some heavy files like playsound and gTTS needs separate install commands. Please check before proceeding)
+- pip install -r requirements.txt 
+
+(NOTE: observed that some heavy files like playsound and gTTS needs separate install commands. Please check before proceeding)
 
 - python main.py
 
@@ -70,6 +72,4 @@ webcam_translator/
 
 ## Conclusion
 
-I learned, broke and fixed a lot of things apart from the ones listed above. 
-
-Hope you learn and have fun cloning or forking it :))
+This project didn't just teach me to code, it taught me to think in tradeoffs. Every freezing frame, broken dependency, and misplaced function was a product decision in disguise. If you clone this, I hope you break it a little. That's where the learning lives
