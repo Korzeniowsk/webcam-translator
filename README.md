@@ -57,7 +57,7 @@ webcam_translator/
 
 - Knowing technical architecture matters: Initially when I had put it in ocr/preprocess.py, bounding box appeared only for ~33ms but when later changed it to ui/display.py it matches when the OCR was detecting the text (~1500ms). This feature led to the alteration of two files. Made me realise promising a feature requires knowledge of the pipeline and how much engineering prowess it takes
 
-- Cons of third party dependencies (Speed to market vs. long-term reliability): Intially I used googletrans for translation, but since it was not compatible with my python version (3.14), it broke the pipeline. Lesson learned: Third party dependencies are a liability. They show up in timelines, security reviews and maintenance costs. This error in real life product deployment is a timeline hit and a maintenance cost. I switched to deep_translator; a lesson in vetting dependencies before committing to them.
+- Cons of third party dependencies (Speed to market vs. long-term reliability): Initially I used googletrans for translation, but since it was not compatible with my python version (3.14), it broke the pipeline. Lesson learned: Third party dependencies are a liability. They show up in timelines, security reviews and maintenance costs. This error in real life product deployment is a timeline hit and a maintenance cost. I switched to deep_translator; a lesson in vetting dependencies before committing to them.
 
 - OCR every frame VS OCR every 30th frame (User experience vs. accuracy): Initially the video was freezing constantly. This was because OCR_EVERY_N_FRAME was not added in config file. I understood that smoother video was more important than fast detection, since text will not change that fast in current scenario. A freezing video breaks the user experience entirely; a slightly slower detection doesn't. Shipping a smooth, usable product beats shipping a "smarter" broken one.
 
@@ -69,4 +69,4 @@ webcam_translator/
 
 ## Conclusion
 
-This project didn't just teach me to code; it taught me to think in tradeoffs. Every freezing frame, broken dependency, and misplaced function was a product decision in disguise. If you clone this, I hope you break it a little. That's where the learning lives
+This project didn't just teach me to code; it taught me to think in tradeoffs. Every freezing frame, broken dependency, and misplaced function was a product decision in disguise. If you clone this, I hope you break it a little. That's where the learning lives.
