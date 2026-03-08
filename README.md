@@ -93,13 +93,13 @@ webcam_translator/
 
 **Short Term (Low effort, high impact)**
 
-- Replace gTTS with Sarvam's Bulbul API — higher quality Hindi TTS with 
+- Replace gTTS with Sarvam's Bulbul API: Higher quality Hindi TTS with 
 Indian language nuances and multiple voice options
-- Replace deep-translator with Sarvam's translation API — better handling 
+- Replace deep-translator with Sarvam's translation API: Better handling 
 of Indian language context and code switching (Hinglish)
-- Add more Indian languages — Sarvam supports 11 languages including Tamil,
+- Add more Indian languages: Sarvam supports 11 languages including Tamil,
 Telugu, Kannada, Bengali — extend beyond Hindi
-- Export evaluation reports as CSV — easier analysis in Excel or Google Sheets
+- Export evaluation reports as CSV: Easier analysis in Excel or Google Sheets
 
 **Medium Term (Moderate effort)**
 
@@ -115,4 +115,4 @@ dataset and generate comparison reports across versions
 
 ## Conclusion
 
-This project didn't just teach me to code; it taught me to think in tradeoffs. Every freezing frame, broken dependency, and misplaced function was a product decision in disguise. If you clone this, I hope you break it a little. That's where the learning lives.
+This project didn't just polish my coding skills; it taught me to think in tradeoffs. Every freezing frame, broken dependency, and misplaced function was a product decision in disguise. If you clone this, I hope you break it a little. That's where the learning lives.
