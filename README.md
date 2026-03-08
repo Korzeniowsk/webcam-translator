@@ -3,7 +3,17 @@
 This is a webcam based translator coded in python. It detects English and Devanagiri, translates the detected text to whichever language required (english to hindi or hindi to english) and speaks it out loud.
 
 As an aspiring project manager, this project was a way for me to learn that software is a system of tradeoffs, not a list of features. I built this to understand how engineering decisions translate into product decisions
+## Demo:
 
+
+## Quick start:
+
+- pip install -r requirements.txt 
+- python main.py
+
+Press:
+- 'q' for quitting application
+- 'b' for bounding box ON/OFF
 ## Features include:
 
 - Real time detection using EasyOCR (chosen over tesseract since Devanagiri is not supported in tesseract)
@@ -34,14 +44,7 @@ webcam_translator/
 └── utils/
     └── logger.py
 ```
-## Installation:
 
-- pip install -r requirements.txt 
-- python main.py
-
-## Control buttons:
-- 'q' for quitting application
-- 'b' for bounding box ON/OFF
 
 ## Tech stack utilised in this project:
 
