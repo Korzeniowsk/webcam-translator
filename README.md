@@ -59,7 +59,9 @@ webcam_translator/
 ├── ui/
 │   └── display.py
 └── utils/
-    └── logger.py
+   └── logger.py
+└── test_images/
+   └── (add your test images here)
 ```
 
 
@@ -86,6 +88,30 @@ webcam_translator/
 - Structured system architecture: Debugging became ten times faster because this project had dedicated file pipeline and logic flow
 
 - Try/Except (Strictness vs. resilience): Apart from logic, dependencies can be external as well (internet speed, hardware etc). One failed translation due to something beyond your control should not lead to the entire translator shutting down. 
+
+### Next steps
+
+**Short Term (Low effort, high impact)**
+
+- Replace gTTS with Sarvam's Bulbul API — higher quality Hindi TTS with 
+Indian language nuances and multiple voice options
+- Replace deep-translator with Sarvam's translation API — better handling 
+of Indian language context and code switching (Hinglish)
+- Add more Indian languages — Sarvam supports 11 languages including Tamil,
+Telugu, Kannada, Bengali — extend beyond Hindi
+- Export evaluation reports as CSV — easier analysis in Excel or Google Sheets
+
+**Medium Term (Moderate effort)**
+
+- Add ASR (speech input): Instead of only reading text from camera, accept 
+voice input and translate spoken words; completing the full ASR → translate → 
+TTS pipeline
+- GUI with Tkinter: language selector dropdown, settings panel, live metric 
+display; no need to edit config.py manually
+- Improve preprocessing pipeline: experiment with more configurations in 
+A/B framework to systematically improve CER and WER
+- Automated evaluation pipeline: Run evaluation automatically on a test 
+dataset and generate comparison reports across versions
 
 ## Conclusion
 
