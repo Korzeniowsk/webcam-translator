@@ -3,6 +3,7 @@
 This is a webcam based translator coded in python. It detects English and Devanagiri, translates the detected text to whichever language required (english to hindi or hindi to english) and speaks it out loud.
 
 As an aspiring project manager, this project was a way for me to learn that software is a system of tradeoffs, not a list of features. I built this to understand how engineering decisions translate into product decisions
+
 ## Demo:
 
 
@@ -25,11 +26,15 @@ Press:
 ## Project structure:
 ```
 webcam_translator/
+├── evaluation/               
+│   ├── ocr_evaluate.py      <= WER, latency
+│   ├── mos_evaluate.py      <= MOS scoring
+│   └── ab_testing.py        <= A/B testing
 ├── main.py
 ├── config.py
 ├── requirements.txt
 ├── assets/
-│   └── NotoSansDevanagari_Condensed-Regular.ttf
+│   └──NotoSansDevanagari_Condensed-Regular.ttf
 ├── capture/
 │   └── camera.py
 ├── ocr/

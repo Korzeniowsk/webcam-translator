@@ -9,6 +9,7 @@ from ui.display import draw_overlay
 from ui.display import draw_bounding_boxes
 from utils.logger import get_logger
 from config import OCR_EVERY_N_FRAMES, MIN_TEXT_LENGTH
+import time
 
 logger=get_logger("main")
 
@@ -40,18 +41,31 @@ def main():
         frame_count +=1
 
         if frame_count % OCR_EVERY_N_FRAMES == 0:
+            t0 = time.time()
             preprocessed = preprocess(frame)
+            preprocessed_latency = (time.time() - t0) * 1000
+
+            t1 = time.time()
             detected_text, current_boxes = ocr.extract_text(preprocessed)
+            ocr_latency = (time.time() - t1) * 1000
+
+            t2 = time.time()
+            translated = translator.translate(detected_text)
+            translation_latency = (time.time() - t2) * 1000
+
+            logger.info(f"Latencies - Preprocess: {preprocessed_latency:.0f}ms || OCR: {ocr_latency:.0f}ms || Translation: {translation_latency:.0f}ms")
+            
 
             if len(detected_text) >= MIN_TEXT_LENGTH:
                 #logger.info(f"Detected: {detected_text}")
-                translated = translator.translate(detected_text)
+                
 
                 if translated:
                     #logger.info(f"Translated: {translated}")
                     current_original = detected_text
                     current_translated = translated
                     speak_async(speaker, translated)
+            
 
         if draw_boxes:
             frame = draw_bounding_boxes(frame, current_boxes)
