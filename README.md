@@ -15,6 +15,7 @@ As an aspiring project manager, this project was a way for me to learn that soft
 Press:
 - 'q' for quitting application
 - 'b' for bounding box ON/OFF
+
 ## Features include:
 
 - Real time detection using EasyOCR (chosen over tesseract since Devanagiri is not supported in tesseract)
@@ -22,6 +23,12 @@ Press:
 - Speaks the translation out loud using gTTS
 - Bounding boxes appear over the detected text
 - Translated hindi text appears using Pillow and NotoSans Devanagiri font
+
+## Evaluation framework
+- CER/WER => measures OCR accuracy against actual truth
+- Latency tracking => measures preprocessing, OCR and translation speed
+- MOS scoring => User evaluates TTS audio quality
+- A/B Testing => compared preprocessing configs quantitatively
 
 ## Project structure:
 ```
