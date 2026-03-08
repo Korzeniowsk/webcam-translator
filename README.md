@@ -9,8 +9,13 @@ As an aspiring project manager, this project was a way for me to learn that soft
 
 ## Quick start:
 
+For live translator: 
 - pip install -r requirements.txt 
 - python main.py
+
+For evaluation framework:
+- python evaluation/run_evaluation.py
+(Run `evaluation/run_evaluation.py` with test images to generate a report measuring WER, CER, and latency. Results are saved to `evaluation/report.json`.)
 
 Press:
 - 'q' for quitting application
