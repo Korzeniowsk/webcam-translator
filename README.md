@@ -6,6 +6,7 @@ As an aspiring project manager, this project was a way for me to learn that soft
 
 ## Demo:
 
+![Webcam Translator Demo](Demo_hello_hwru.gif)
 
 ## Quick start:
 
